@@ -20,7 +20,7 @@ _A website that allows kids or anyone to add words to their list and give them d
 
 ## Setup/Installation Requirements
 
-* _Install Words with meaning by cloning this repository_
+* _Install Words with meaning by cloning this repository or click here_ 
 
 
 ## Known Bugs
