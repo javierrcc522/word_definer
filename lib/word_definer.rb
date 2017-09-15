@@ -51,5 +51,5 @@ class WordDefiner
   def self.clear()
     @@list = []
   end
-  
+
 end
