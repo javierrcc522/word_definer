@@ -19,19 +19,19 @@ class WordDefiner
   end
 
   def self.remove_word(id)
-    @@list.map do |definer|
-      if definer.id == id
-        definer.define_word = ""
-        definer.word_meaning = ""
+    @@list.map do |define|
+      if define.id == id
+        define.define_word = ""
+        define.word_meaning = ""
       end
     end
   end
 
   def self.update(define_word, word_meaning,id)
     @@list.map do |define|
-      if definer.id == id
-        definer.define_word
-        definer.word_meaning
+      if define.id == id
+        define.define_word
+        define.word_meaning
       end
     end
   end

@@ -34,7 +34,7 @@ post('/delete/:id') do
 end
 
 get('/update/:id') do
-  @list = WordDefiner.find(params[:id])
+  @define = WordDefiner.find(params[:id])
   erb(:update)
 end
 
@@ -44,6 +44,7 @@ post('/update/:id') do
   word_being_define = {'define_word' => define_word, 'word_meaning' => word_meaning}
   define = WordDefiner.new(word_being_define)
   define.save()
-  @list = WordDefiner.find(params[:id])
+  redirect '/'
+  @define = WordDefiner.find(params[:id])
   erb(:update)
 end

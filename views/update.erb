@@ -1,7 +1,12 @@
+<h1><%=@define.define_word %></h1>
+<h4><%=@define.word_meaning %></h4><br><br>
 
 <h4>Update Definiton:</h4>
-<form action="/update/<%= @define.id %>" method="post">
+<form action="/update/<%= @define.id %>" method="get">
   <div class="form-group">
-    <label for="name">First name: </label>
-    <input id="name" name="name" class="form-control" type="text">
+    <label for="word_meaning"> </label>
+    <input id="word_meaning" name="word_meaning" class="form-control" type="text">
   </div>
+  <button type="submit" class="btn">Update</button>
+</form>
+<h4><a href='/'>Return home</a></h4>
