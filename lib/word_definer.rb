@@ -18,6 +18,15 @@ class WordDefiner
     end
   end
 
+  def self.remove_word(id)
+    @@list.map do |definer|
+      if definer.id == id
+        definer.define_word = ""
+        definer.word_meaning = ""
+      end
+    end
+  end
+
   def self.all
     @@list
   end

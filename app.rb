@@ -25,3 +25,10 @@ get('/define/:id') do
   @define = WordDefiner.find(params[:id])
   erb(:define)
 end
+
+post('/delete/:id') do
+  @define = WordDefiner.find(params[:id])
+  WordDefiner.remove_word(@define.id)
+  erb(:define)
+  redirect '/'
+end
