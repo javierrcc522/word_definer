@@ -22,6 +22,5 @@ end
 
 get('/update/:id') do
   @define = WordDefiner.find(params[:id])
-
   erb(:update)
 end

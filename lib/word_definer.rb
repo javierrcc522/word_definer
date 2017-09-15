@@ -9,6 +9,11 @@ class WordDefiner
     @id = @@list.length + 1
   end
 
+
+  def update(attributes)
+  end
+
+
   def self.all
     @@list
   end
