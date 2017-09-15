@@ -27,6 +27,15 @@ class WordDefiner
     end
   end
 
+  def self.update(define_word, word_meaning,id)
+    @@list.map do |define|
+      if definer.id == id
+        definer.define_word
+        definer.word_meaning
+      end
+    end
+  end
+
   def self.all
     @@list
   end
@@ -42,10 +51,5 @@ class WordDefiner
   def self.clear()
     @@list = []
   end
-
-
-
-  def update(attributes)
-  end
-
+  
 end
