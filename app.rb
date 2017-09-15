@@ -17,10 +17,11 @@ post('/') do
   word_being_define = {'define_word' => define_word, 'word_meaning' => word_meaning}
   define = WordDefiner.new(word_being_define)
   define.save()
+  @list = WordDefiner.sort()
   erb(:list)
 end
 
-get('/update/:id') do
+get('/define/:id') do
   @define = WordDefiner.find(params[:id])
-  erb(:update)
+  erb(:define)
 end

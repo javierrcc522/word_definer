@@ -1,8 +1,7 @@
-<h1><%= @define.define_word %><%= @define.word_meaning %></h1>
+<h1><%= @define.define_word %></h1>
 
 <form action="/delete/<%= @define.id %>" method="post">
-  <button type="submit" class="btn">delete contact</button>
+  <button type="submit" class="btn">delete</button>
 </form>
 
 <h4><a href='/'>Return home</a></h4>
-<h4><a href='/update/<%= @define.id %>'>Update your definiton</a></h4>
