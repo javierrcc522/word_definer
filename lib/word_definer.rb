@@ -13,4 +13,8 @@ class WordDefiner
     @@list
   end
 
+  def save
+    @@list.push(self)
+  end
+
 end
