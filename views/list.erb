@@ -1,0 +1,18 @@
+<h2>Define words</h2>
+
+<% @list.each do |define| %>
+  <h4><a href="/define/<%= define.id %>"><%= define.define_word %></a></h4>
+<% end %>
+
+<h4>Write words you don't know</h4>
+<form action="/" method="post">
+  <div class="form-group">
+    <label for="define_word">Write the word here </label>
+    <input id="define_word" name="define_word" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="word_meaning">Word meaning</label>
+    <input id="word_meaning" name="word_meaning" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">add word</button>
+</form>
