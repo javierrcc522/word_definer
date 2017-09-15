@@ -24,5 +24,5 @@ post('/') do
 
   word_being_define = {'define_word' => define_word, 'word_meaning' => word_meaning}
 
-  define =
+
 end
