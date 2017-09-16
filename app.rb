@@ -22,29 +22,25 @@ post('/') do
 end
 
 get('/define/:id') do
-  @define = WordDefiner.find(params[:id])
+  @word = WordDefiner.find(params[:id])
   erb(:define)
 end
 
 post('/delete/:id') do
-  @define = WordDefiner.find(params[:id])
-  WordDefiner.remove_word(@define.id)
+  @word = WordDefiner.find(params[:id])
+  WordDefiner.remove_word(@word.id)
   erb(:define)
   redirect '/'
 end
 
 get('/update/:id') do
-  @define = WordDefiner.find(params[:id])
+  @word = WordDefiner.find(params[:id])
   erb(:update)
 end
 
 post('/update/:id') do
-  define_word = params['define_word']
   word_meaning = params['word_meaning']
-  word_being_define = {'define_word' => define_word, 'word_meaning' => word_meaning}
-  define = WordDefiner.new(word_being_define)
-  define.save()
-  redirect '/'
-  @define = WordDefiner.find(params[:id])
+  @word = WordDefiner.find(params[:id])
+  WordDefiner.update(word_meaning, @word.id)
   erb(:update)
 end

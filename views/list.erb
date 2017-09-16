@@ -1,7 +1,7 @@
 <h2>Define words</h2>
 
-<% @list.each do |define| %>
-  <h4><a href="/define/<%= define.id %>"><%= define.define_word %></a></h4>
+<% @list.each do |word| %>
+  <h4><a href="/define/<%= word.id %>"><%= word.define_word %></a></h4>
 <% end %>
 
 <h4>Write words you don't know</h4>

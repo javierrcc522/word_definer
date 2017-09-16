@@ -5,33 +5,33 @@ class WordDefiner
 
   def initialize(attributes)
     @define_word = attributes.fetch('define_word')
-    @word_meaning = attributes.fetch('word_meaning')
+    @word_meaning = [attributes.fetch('word_meaning')]
     @id = @@list.length + 1
   end
 
   def self.find(id)
     define_id = id.to_i()
-    @@list.each do |define|
-      if define.id == define_id
-        return define
+    @@list.each do |word|
+      if word.id == define_id
+        return word
       end
     end
   end
 
   def self.remove_word(id)
-    @@list.map do |define|
-      if define.id == id
-        define.define_word = ""
-        define.word_meaning = ""
+    @@list.map do |word|
+      if word.id == id
+        word.define_word = ""
+        word.word_meaning = []
       end
     end
   end
 
-  def self.update(define_word, word_meaning,id)
-    @@list.map do |define|
-      if define.id == id
-        define.define_word
-        define.word_meaning
+  def self.update(new_definition,id)
+    @@list.map do |word|
+      if word.id == id
+        # word.word_meaning = word.word_meaning.to_a
+        word.word_meaning.push(new_definition)
       end
     end
   end

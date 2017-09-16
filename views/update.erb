@@ -1,8 +1,10 @@
-<h1><%=@define.define_word %></h1>
-<h4><%=@define.word_meaning %></h4><br><br>
+<h1><%=@word.define_word %></h1>
+<% @word.word_meaning.each do |meaning| %>
+  <h4>def: <%=meaning%></a></h4>
+<% end %>
 
 <h4>Update Definiton:</h4>
-<form action="/update/<%= @define.id %>" method="get">
+<form action="/update/<%= @word.id %>" method="post">
   <div class="form-group">
     <label for="word_meaning"> </label>
     <input id="word_meaning" name="word_meaning" class="form-control" type="text">
