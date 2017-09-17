@@ -7,6 +7,7 @@ class WordDefiner
     @define_word = attributes.fetch('define_word')
     @word_meaning = [attributes.fetch('word_meaning')]
     @id = @@list.length + 1
+
   end
 
   def self.find(id)
@@ -30,7 +31,6 @@ class WordDefiner
   def self.update(new_definition,id)
     @@list.map do |word|
       if word.id == id
-        # word.word_meaning = word.word_meaning.to_a
         word.word_meaning.push(new_definition)
       end
     end

@@ -1,6 +1,7 @@
-<h1><%=@word.define_word %></h1>
+<br>
+<h1><%=@word.define_word %></h1><br>
 <% @word.word_meaning.each do |meaning| %>
-  <h4>def: <%=meaning%></a></h4>
+  <h4>Definition: <%=meaning%></a></h4><br>
 <% end %>
 
 <h4>Update Definiton:</h4>
@@ -10,5 +11,5 @@
     <input id="word_meaning" name="word_meaning" class="form-control" type="text">
   </div>
   <button type="submit" class="btn">Update</button>
-</form>
+</form><br>
 <h4><a href='/'>Return home</a></h4>

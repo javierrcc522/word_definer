@@ -1,10 +1,12 @@
-<h1><%=@word.define_word %></h1>
+
+<br>
+<h3><%=@word.define_word %></h3><br>
 <% @word.word_meaning.each do |meaning| %>
-  <h4>def: <%=meaning%></a></h4>
+  <h4>Definition: <%=meaning%></a></h4><br>
 <% end %>
 
 <form action="/delete/<%= @word.id %>" method="post">
-  <button type="submit" class="btn">delete</button>
+  <button type="submit" class="btn">delete word</button>
 </form><br>
-<h4><a href='/update/<%= @word.id %>'>add definition</a></h4>
+<h4><a href='/update/<%= @word.id %>'><strong>Add definition</strong></a></h4>
 <h4><a href='/'>Return home</a></h4>
