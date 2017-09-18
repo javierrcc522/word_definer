@@ -20,12 +20,14 @@ _A website that allows kids or anyone to add words to their list and give them d
 
 ## Setup/Installation Requirements
 
-* _Install Words with meaning by cloning this repository or click here_ 
+* _Install Words with meaning by cloning this repository or click here_
 
+## LIVE SITE
+_[Click Here](https://salty-beach-34718.herokuapp.com)_
 
 ## Known Bugs
 
-_Can't update_
+_none_
 
 ## Support and contact details
 
