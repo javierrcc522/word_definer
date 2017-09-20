@@ -10,33 +10,45 @@ describe("WordDefiner") do
 
   describe("#save") do
       it("save a word to a list") do
-        define = WordDefiner.new({"define_word" => "kitten", "word_meaning" => "a baby cat"})
-        define.save()
-        expect(WordDefiner.all()).to(eq([define]))
+        word = WordDefiner.new({"define_word" => "kitten", "word_meaning" => "a baby cat"})
+        word.save()
+        expect(WordDefiner.all()).to(eq([word]))
     end
   end
 
   describe(".remove_word") do
   it(" will delete a word and its definition") do
-    define = WordDefiner.new({"define_word" => "kitten", "word_meaning" => "a baby cat"})
-    define.save()
-    WordDefiner.remove_word(define.id)
-    expect(define.define_word).to(eq(""))
+    word = WordDefiner.new({"define_word" => "kitten", "word_meaning" => "a baby cat"})
+    word.save()
+    WordDefiner.remove_word(word.id)
+    expect(word.define_word).to(eq(""))
     end
   end
 
   describe(".sort") do
   it("puts the words in alphabetical order") do
-    word1 = WordDefiner.new({"define_word" => "kitten", "word_meaning" => "a baby cat"})
-    word1.save()
-    word2 = WordDefiner.new({"define_word" => "kitten", "word_meaning" => "a baby cat"})
+    word = WordDefiner.new({"define_word" => "kitten", "word_meaning" => "a baby cat"})
+    word.save()
+    word2 = WordDefiner.new({"define_word" => "zetta", "word_meaning" => "the last letter word in spanish"})
     word2.save()
-    WordDefiner.sort()
-    expect(WordDefiner.all()).to(eq([word1,word2]))
+    expect(WordDefiner.sort()).to(eq([word,word2]))
     end
   end
 
+  describe('#clear') do
+    it("clears items from the dictionary") do
+      word = WordDefiner.new({"define_word" => "zetta", "word_meaning" => "the last letter word in spanish"})
+      word.save()
+      WordDefiner.clear()
+      expect(WordDefiner.all).to(eq([]))
+    end
+  end
 
-
-
+  describe('#all') do
+    it('show all the items in the list') do
+      word = WordDefiner.new({"define_word" => "kitten", "word_meaning" => "a baby cat"})
+      word.save()
+      expect(WordDefiner.all).to(eq([word]))
+    end
+  end
 end
